@@ -17,7 +17,7 @@ Le problème du voyageur de commerce consiste à trouver le chemin le plus court
 ## Exigences
 
 - Python 3.x
-- Bibliothèques : pandas, itertools
+- Bibliothèques : pandas, numpy
 
 ## Instructions d'Exécution
 
