@@ -53,9 +53,10 @@ if fichier_excel is not None:
     # Maintenant, vous pouvez utiliser votre tableau numpy (donnees_numpy) comme bon vous semble
     st.write("Données lues à partir du fichier Excel :")
     st.write(donnees_excel)
+     # Appliquer l'algorithme de forte descente
+    meilleure_solution, distance_minimale = forte_descente(donnees)
+    st.write("Meilleure solution:", meilleure_solution)
+    st.write("Distance minimale:", distance_minimale)
+    st.write("By Zakaria CHAARA")
 
- # Appliquer l'algorithme de forte descente
-meilleure_solution, distance_minimale = forte_descente(donnees)
-st.write("Meilleure solution:", meilleure_solution)
-st.write("Distance minimale:", distance_minimale)
-st.write("By Zakaria CHAARA")
+
