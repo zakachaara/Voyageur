@@ -1,8 +1,16 @@
-pip install openpyxl
+
 import pandas as pd
 import streamlit as st
 import pandas as pd
+import subprocess
 
+# Vérifier si openpyxl est installé, sinon l'installer
+try:
+    import openpyxl
+except ImportError:
+    st.warning("Dépendance 'openpyxl' manquante. Installation en cours...")
+    subprocess.run(["pip", "install", "openpyxl"])
+    st.success("Installation terminée. Veuillez rafraîchir la page.")
 
 def calculer_distance_totale(solution, distances):
     """
