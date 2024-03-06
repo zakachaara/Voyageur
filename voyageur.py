@@ -46,7 +46,7 @@ fichier_excel = st.file_uploader("Télécharger votre fichier Excel", type=['xls
 
 if fichier_excel is not None:
     # Lire le fichier Excel
-    donnees_excel = pd.read_excel(fichier_excel, engine='xlrd')
+    donnees_excel = pd.read_excel(fichier_excel)
 
     # Transformer les données en un tableau numpy
     donnees = donnees_excel.values
