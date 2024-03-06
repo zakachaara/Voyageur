@@ -48,7 +48,7 @@ if fichier_excel is not None:
     donnees_excel = pd.read_excel(fichier_excel)
 
     # Transformer les données en un tableau numpy
-    donnees_numpy = donnees_excel.values
+    donnees = donnees_excel.values
 
     # Maintenant, vous pouvez utiliser votre tableau numpy (donnees_numpy) comme bon vous semble
     st.write("Données lues à partir du fichier Excel :")
