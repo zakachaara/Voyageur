@@ -2,16 +2,7 @@
 import pandas as pd
 import streamlit as st
 import pandas as pd
-import subprocess
-subprocess.run(["pip", "install", "openpyxl"])
 
-# Vérifier si openpyxl est installé, sinon l'installer
-try:
-    import openpyxl
-except ImportError:
-    st.warning("Dépendance 'openpyxl' manquante. Installation en cours...")
-    subprocess.run(["pip", "install", "openpyxl"])
-    st.success("Installation terminée. Veuillez rafraîchir la page.")
 
 def calculer_distance_totale(solution, distances):
     """
@@ -55,7 +46,7 @@ fichier_excel = st.file_uploader("Télécharger votre fichier Excel", type=['xls
 
 if fichier_excel is not None:
     # Lire le fichier Excel
-    donnees_excel = pd.read_excel(fichier_excel)
+    donnees_excel = pd.read_excel(fichier_excel, engine='xlrd')
 
     # Transformer les données en un tableau numpy
     donnees = donnees_excel.values
