@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit as st
 import pandas as pd
 import subprocess
+subprocess.run(["pip", "install", "openpyxl"])
 
 # Vérifier si openpyxl est installé, sinon l'installer
 try:
