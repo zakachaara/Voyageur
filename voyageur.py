@@ -1,6 +1,6 @@
 import pandas as pd
-
-import numpy as np
+import streamlit as st
+import pandas as pd
 
 
 def calculer_distance_totale(solution, distances):
@@ -40,19 +40,22 @@ def forte_descente(distances):
 
     return solution_actuelle, distance_actuelle
 
-# Exemple d'utilisation
+# Afficher un champ pour télécharger un fichier Excel
+fichier_excel = st.file_uploader("Télécharger votre fichier Excel", type=['xlsx'])
 
+if fichier_excel is not None:
+    # Lire le fichier Excel
+    donnees_excel = pd.read_excel(fichier_excel)
 
+    # Transformer les données en un tableau numpy
+    donnees_numpy = donnees_excel.values
 
-# Chemin vers le fichier Excel
-chemin_fichier_excel = "C://Users//O//Desktop//distance.xlsx"
-
-# Lire le fichier Excel
-donnees_excel = pd.read_excel(chemin_fichier_excel)
-donnees = donnees_excel.values
-# Afficher les premières lignes du fichier Excel
+    # Maintenant, vous pouvez utiliser votre tableau numpy (donnees_numpy) comme bon vous semble
+    st.write("Données lues à partir du fichier Excel :")
+    st.write(donnees_excel)
 
  # Appliquer l'algorithme de forte descente
 meilleure_solution, distance_minimale = forte_descente(donnees)
-print("Meilleure solution:", meilleure_solution)
-print("Distance minimale:", distance_minimale)
+st.write("Meilleure solution:", meilleure_solution)
+st.write("Distance minimale:", distance_minimale)
+st.write("By Zakaria CHAARA")
